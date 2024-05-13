@@ -4,10 +4,10 @@ A blog management system built using Spring Boot, allowing users to create, retr
 
 ## Features
 
-- **Create New Posts**: Users can create new blog posts with a title, content, and tags.
-- **Retrieve All Posts**: Users can view all existing blog posts.
-- **Delete Posts**: Users can delete a post by its unique identifier.
-- **Search Posts**: Users can search for posts based on the presence of specific text within the content.
+- **Create New Posts**: 
+- **Retrieve All Posts**:
+- **Delete Posts**: 
+- **Search Posts**: 
 
 ## Technologies Used
 
@@ -34,7 +34,12 @@ A blog management system built using Spring Boot, allowing users to create, retr
    - **Delete Post by ID**: Send a `DELETE` request to `http://localhost:8080/api/posts/{postId}`.
    - **Search Posts by Content**: Send a `GET` request to `http://localhost:8080/api/posts/content{content}`.
 
+## Instructions for Use
 
+1. Clone the repository to your local machine.
+2. Ensure you have Java installed.
+3. Compile and run the application.
+4. Follow the on-screen prompts to interact with the application and manage animal data.
 
 ### Acknowledgments
 

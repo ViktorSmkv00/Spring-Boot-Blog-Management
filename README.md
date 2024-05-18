@@ -1,7 +1,7 @@
 # Blog Management System
 
-A blog management system built using Spring Boot, allowing users to create, retrieve, delete, and search blog posts. 
-
+ A REST API built with Spring Boot used for managing a blog, allowing users to create, retrieve, delete and search blog posts. Features include REST APIs, Tomcat hosting, and integration with Postman for testing CRUD operations. 
+ 
 - **Create New Posts**: 
 - **Retrieve All Posts**:
 - **Delete Posts**: 

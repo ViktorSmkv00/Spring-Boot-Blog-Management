@@ -1,37 +1,34 @@
 package bg.tuvarna.sit.blogmanagement.service;
 
-import bg.tuvarna.sit.blogmanagement.dao.PostDao;
+import bg.tuvarna.sit.blogmanagement.dao.PostRepository;
 import bg.tuvarna.sit.blogmanagement.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class PostService {
-    private final PostDao postDao;
+    private final PostRepository postRepository;
 
     @Autowired
-    public PostService(@Qualifier("postRepository") PostDao postDao) {
-        this.postDao = postDao;
+    public PostService(PostRepository postRepository) {
+        this.postRepository = postRepository;
     }
 
-    public int addPost(Post post){
-        return postDao.insertPost(post);
+    public void addPost(Post post) {
+        postRepository.save(post); // Save post to the database
     }
 
-    public List<Post> showAllPosts(){
-        return postDao.showAllPosts();
+    public List<Post> showAllPosts() {
+        return postRepository.findAll(); // Get all posts
     }
 
-    public List<Post> getPostByContent(String content){
-        return postDao.getPostByContent(content);
+    public List<Post> getPostByContent(String content) {
+        return postRepository.findByContentContaining(content); // Get posts by content
     }
 
-
-    public int deletePostById(UUID id){
-        return postDao.deletePostById(id);
+    public void deletePostById(Long id) {
+        postRepository.deleteById(id); // Delete post by ID
     }
 }

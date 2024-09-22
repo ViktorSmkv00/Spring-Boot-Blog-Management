@@ -31,4 +31,15 @@ public class PostService {
     public void deletePostById(Long id) {
         postRepository.deleteById(id); // Delete post by ID
     }
+
+    public Post updatePostById(Long id, Post post){
+        return postRepository.findById(id)
+                .map(existingPost -> {
+                    existingPost.setTitle(post.getTitle());
+                    existingPost.setContent(post.getContent());
+                    return postRepository.save(existingPost);
+                })
+                .orElseThrow(() -> new RuntimeException("Post not found with id " + id));
+    }
+
 }

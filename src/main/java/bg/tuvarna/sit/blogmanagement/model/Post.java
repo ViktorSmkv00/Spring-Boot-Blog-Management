@@ -4,9 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
+import lombok.Setter;
 
 
-
+@Getter
+@Setter
 @Entity // Add this annotation to mark this class as a JPA entity
 @Table(name = "posts") // Optional: Specify the table name
 public class Post {

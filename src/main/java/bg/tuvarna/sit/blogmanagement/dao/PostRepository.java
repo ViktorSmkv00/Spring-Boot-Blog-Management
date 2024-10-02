@@ -8,7 +8,6 @@ import java.util.List;
 
 @Repository
 public interface PostRepository extends JpaRepository<Post, Long> {
-    // Custom method to find posts by content
     List<Post> findByContentContaining(String content);
 }
 

@@ -9,16 +9,16 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity // Add this annotation to mark this class as a JPA entity
-@Table(name = "posts") // Optional: Specify the table name
+@Entity
+@Table(name = "posts")
 public class Post {
 
-    @Id // Mark the id field as the primary key
-    @GeneratedValue(strategy = GenerationType.AUTO) // Let JPA generate the ID automatically
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotBlank
-    @Column(name = "title") // Specify the column in the database (optional)
+    @Column(name = "title")
     private String title;
 
     @NotBlank
@@ -33,7 +33,7 @@ public class Post {
         this.content = content;
     }
 
-    // Default constructor for JPA
+
     public Post() {
     }
 }
